@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".MainActivity">
+    <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+        android:id="@+id/layout_head"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:neomorph_view_type="rectangular"
+        app:neomorph_shadow_type="outer"
+        app:neomorph_elevation="6dp"
+        app:neomorph_corner_radius="10dp"
+        app:neomorph_background_color="@color/colorAccent"
+        app:neomorph_shadow_color="@color/colorShadow"
+        app:neomorph_highlight_color="@color/colorShadowLight">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="110dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/ilustrasi"
+            android:layout_gravity="right"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+            <TextView
+                android:id="@+id/tv_selamatdatang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SELAMAT DATANG,"
+                android:textColor="@color/colorShadowLight"
+                android:textStyle="bold"
+                android:textSize="20dp"/>
+            <TextView
+                android:id="@+id/tv_nama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="M.Abdul Chakam"
+                android:textColor="@color/colorShadowLight" />
+        </LinearLayout>
+    </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="520dp"
+        android:layout_below="@id/layout_head"
+        android:layout_centerInParent="true"
+        android:padding="20dp">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+
+    <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+        android:id="@+id/layout_totalprice"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:neomorph_view_type="rectangular"
+        app:neomorph_shadow_type="outer"
+        app:neomorph_elevation="6dp"
+        app:neomorph_corner_radius="10dp"
+        app:neomorph_background_color="@color/colorPrimary"
+        app:neomorph_shadow_color="@color/colorShadow"
+        app:neomorph_highlight_color="@color/colorShadowLight"
+        android:layout_alignParentBottom="true"
+        android:onClick="checkout">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_centerInParent="true">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Total : "
+                            android:textColor="#3C3C3C"/>
+                        <TextView
+                            android:id="@+id/total_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rp.0"
+                            android:textStyle="bold"
+                            android:textColor="#FF2616"/>
+                </LinearLayout>
+            </RelativeLayout>
+    </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
+</RelativeLayout>

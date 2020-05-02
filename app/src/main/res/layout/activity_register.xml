@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:paddingHorizontal="25dp"
+    tools:context=".RegisterActivity">
+
+    <TextView
+        android:id="@+id/tv_daftar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Daftar Sekarang"
+        android:textColor="@color/colorAccent"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="10dp"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_daftar"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sudah Punya Akun?"
+            android:textColor="#8F8F8F"
+            android:textSize="18dp"/>
+        <TextView
+            android:id="@+id/tv_ToLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Masuk"
+            android:textStyle="bold"
+            android:textColor="#2196F3"
+            android:textSize="18dp"/>
+    </LinearLayout>
+
+    <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+        android:id="@+id/layout_nama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:neomorph_view_type="rectangular"
+        app:neomorph_shadow_type="outer"
+        app:neomorph_elevation="6dp"
+        app:neomorph_corner_radius="10dp"
+        app:neomorph_background_color="@color/colorPrimary"
+        app:neomorph_shadow_color="@color/colorShadow"
+        app:neomorph_highlight_color="@color/colorShadowLight"
+        android:layout_above="@id/layout_alamat">
+
+        <EditText
+            android:id="@+id/edt_nama"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Nama "
+            android:background="@drawable/shape_reactangle"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textColor="@color/colorAccent"
+            android:inputType="textEmailAddress"/>
+    </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
+
+    <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+        android:id="@+id/layout_alamat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:neomorph_view_type="rectangular"
+        app:neomorph_shadow_type="outer"
+        app:neomorph_elevation="6dp"
+        app:neomorph_corner_radius="10dp"
+        app:neomorph_background_color="@color/colorPrimary"
+        app:neomorph_shadow_color="@color/colorShadow"
+        app:neomorph_highlight_color="@color/colorShadowLight"
+        android:layout_above="@+id/layout_kota">
+
+        <EditText
+            android:id="@+id/edt_alamat"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:hint="Alamat "
+            android:background="@drawable/shape_reactangle"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textColor="@color/colorAccent"
+            android:inputType="textMultiLine"/>
+    </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
+
+    <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+        android:id="@+id/layout_kota"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:neomorph_view_type="rectangular"
+        app:neomorph_shadow_type="outer"
+        app:neomorph_elevation="6dp"
+        app:neomorph_corner_radius="10dp"
+        app:neomorph_background_color="@color/colorPrimary"
+        app:neomorph_shadow_color="@color/colorShadow"
+        app:neomorph_highlight_color="@color/colorShadowLight"
+        android:layout_above="@+id/layout_kodepos">
+
+        <EditText
+            android:id="@+id/edt_kota"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Kota "
+            android:background="@drawable/shape_reactangle"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textColor="@color/colorAccent"
+            android:inputType="text"/>
+    </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
+
+    <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+        android:id="@+id/layout_kodepos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:neomorph_view_type="rectangular"
+        app:neomorph_shadow_type="outer"
+        app:neomorph_elevation="6dp"
+        app:neomorph_corner_radius="10dp"
+        app:neomorph_background_color="@color/colorPrimary"
+        app:neomorph_shadow_color="@color/colorShadow"
+        app:neomorph_highlight_color="@color/colorShadowLight"
+        android:layout_centerInParent="true">
+
+        <EditText
+            android:id="@+id/edt_kodepos"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Kode Pos "
+            android:background="@drawable/shape_reactangle"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textColor="@color/colorAccent"
+            android:inputType="number"/>
+    </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
+
+    <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+        android:id="@+id/layout_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:neomorph_view_type="rectangular"
+        app:neomorph_shadow_type="outer"
+        app:neomorph_elevation="6dp"
+        app:neomorph_corner_radius="10dp"
+        app:neomorph_background_color="@color/colorPrimary"
+        app:neomorph_shadow_color="@color/colorShadow"
+        app:neomorph_highlight_color="@color/colorShadowLight"
+        android:layout_below="@+id/layout_kodepos">
+
+        <EditText
+            android:id="@+id/edt_phone"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="No Hp "
+            android:background="@drawable/shape_reactangle"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textColor="@color/colorAccent"
+            android:inputType="number"/>
+
+    </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
+
+    <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+        android:id="@+id/layout_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:neomorph_view_type="rectangular"
+        app:neomorph_shadow_type="outer"
+        app:neomorph_elevation="6dp"
+        app:neomorph_corner_radius="10dp"
+        app:neomorph_background_color="@color/colorPrimary"
+        app:neomorph_shadow_color="@color/colorShadow"
+        app:neomorph_highlight_color="@color/colorShadowLight"
+        android:layout_below="@+id/layout_phone">
+
+        <EditText
+            android:id="@+id/edt_email"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Email "
+            android:background="@drawable/shape_reactangle"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textColor="@color/colorAccent"
+            android:inputType="textEmailAddress"/>
+
+    </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
+
+    <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+        android:id="@+id/layout_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:neomorph_view_type="rectangular"
+        app:neomorph_shadow_type="outer"
+        app:neomorph_elevation="6dp"
+        app:neomorph_corner_radius="10dp"
+        app:neomorph_background_color="@color/colorPrimary"
+        app:neomorph_shadow_color="@color/colorShadow"
+        app:neomorph_highlight_color="@color/colorShadowLight"
+        android:layout_below="@+id/layout_email">
+
+        <EditText
+            android:id="@+id/edt_pass"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Password "
+            android:background="@drawable/shape_reactangle"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textColor="@color/colorAccent"
+            android:inputType="textPassword"/>
+    </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
+
+
+    <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+        android:id="@+id/layout_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:neomorph_view_type="rectangular"
+        app:neomorph_shadow_type="outer"
+        app:neomorph_elevation="6dp"
+        app:neomorph_corner_radius="10dp"
+        app:neomorph_background_color="@color/colorPrimary"
+        app:neomorph_shadow_color="@color/colorShadow"
+        app:neomorph_highlight_color="@color/colorShadowLight"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/layout_pass"
+        android:layout_marginTop="20dp">
+
+        <Button
+            android:id="@+id/button_register"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_button"
+            android:text="DAFTAR"
+            android:textColor="@color/colorShadowLight"/>
+    </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
+
+</RelativeLayout>
