@@ -49,51 +49,82 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="520dp"
+        android:layout_height="match_parent"
         android:layout_below="@id/layout_head"
         android:layout_centerInParent="true"
         android:padding="20dp">
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="match_parent"
+            android:layout_marginBottom="70dp"/>
     </RelativeLayout>
 
-
-    <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
-        android:id="@+id/layout_totalprice"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        app:neomorph_view_type="rectangular"
-        app:neomorph_shadow_type="outer"
-        app:neomorph_elevation="6dp"
-        app:neomorph_corner_radius="10dp"
-        app:neomorph_background_color="@color/colorPrimary"
-        app:neomorph_shadow_color="@color/colorShadow"
-        app:neomorph_highlight_color="@color/colorShadowLight"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:layout_alignParentBottom="true"
-        android:onClick="checkout">
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_centerInParent="true">
+        android:layout_marginBottom="10dp"
+        android:paddingHorizontal="10dp">
+        <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+            android:id="@+id/layout_jmlBeli"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            app:neomorph_view_type="rectangular"
+            app:neomorph_shadow_type="outer"
+            app:neomorph_elevation="6dp"
+            app:neomorph_corner_radius="10dp"
+            app:neomorph_background_color="@color/colorPrimary"
+            app:neomorph_shadow_color="@color/colorShadow"
+            app:neomorph_highlight_color="@color/colorShadowLight"
+            android:layout_centerVertical="true">
+                <RelativeLayout
+                    android:id="@+id/btn_beli"
+                    android:onClick="checkout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:ignore="OnClick">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="6dp"
+                        android:orientation="horizontal">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Total : "
-                            android:textColor="#3C3C3C"/>
+                            android:text="Beli "
+                            android:textColor="#3C3C3C"
+                            android:textSize="18dp" />
+
                         <TextView
-                            android:id="@+id/total_price"
+                            android:id="@+id/tv_jmlBeli"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Rp.0"
-                            android:textStyle="bold"
-                            android:textColor="#FF2616"/>
-                </LinearLayout>
-            </RelativeLayout>
-    </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
+                            android:text="(0)"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </RelativeLayout>
+        </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
+
+            <Button
+                android:id="@+id/btn_cart"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:paddingLeft="25dp"
+                android:layout_marginHorizontal="10dp"
+                android:drawableStart="@drawable/ic_shopping_cart_black_24dp"
+                android:onClick="cart"
+                tools:ignore="OnClick"
+                android:background="@drawable/bg_btn_cart"
+                android:layout_centerVertical="true"/>
+    </RelativeLayout>
 </RelativeLayout>

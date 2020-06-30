@@ -4,88 +4,170 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    tools:context=".CheckoutActivity"
     android:orientation="vertical"
-    android:paddingHorizontal="30dp"
-    android:background="@drawable/background"
-    tools:context=".CheckoutActivity">
+    android:background="@drawable/background">
+
+    <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+        android:id="@+id/layout_detailPesanan"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        app:neomorph_view_type="rectangular"
+        app:neomorph_shadow_type="outer"
+        app:neomorph_elevation="6dp"
+        app:neomorph_corner_radius="10dp"
+        app:neomorph_background_color="@color/colorPrimary"
+        app:neomorph_shadow_color="@color/colorShadow"
+        app:neomorph_highlight_color="@color/colorShadowLight">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Detail Pesanan"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:gravity="center"/>
+    </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
+
 
     <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
         android:id="@+id/layout_totalprice"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        app:neomorph_view_type="rectangular"
-        app:neomorph_shadow_type="outer"
-        app:neomorph_elevation="6dp"
-        app:neomorph_corner_radius="10dp"
+        android:layout_height="500dp"
         app:neomorph_background_color="@color/colorPrimary"
+        app:neomorph_corner_radius="10dp"
+        app:neomorph_elevation="6dp"
+        app:neomorph_highlight_color="@color/colorShadowLight"
         app:neomorph_shadow_color="@color/colorShadow"
-        app:neomorph_highlight_color="@color/colorShadowLight">
+        app:neomorph_shadow_type="outer"
+        app:neomorph_view_type="rectangular">
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center">
-        <TextView
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Total Transaksi"/>
-        <TextView
-            android:id="@+id/totalCheckout"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:text="RP. 0,000"
-            android:textStyle="bold"
-            android:textColor="#FF2616"
-            android:textSize="25dp"/>
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="10dp"
+            android:orientation="vertical">
+            <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:neomorph_background_color="@color/colorPrimary"
+                app:neomorph_corner_radius="10dp"
+                app:neomorph_elevation="6dp"
+                app:neomorph_highlight_color="@color/colorShadowLight"
+                app:neomorph_shadow_color="@color/colorShadow"
+                app:neomorph_shadow_type="outer"
+                app:neomorph_view_type="rectangular">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rc_cart"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    tools:layout_editor_absoluteX="1dp"
+                    tools:layout_editor_absoluteY="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="30dp"/>
+            </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Biaya Pengiriman : "
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/tv_ongkir"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        tools:text="RP. 0,000" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Total Pesanan : "
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/totalCheckout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        tools:text="RP. 0,000" />
+                </LinearLayout>
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Total : "
+                    android:textSize="15dp"
+                    android:gravity="center"/>
+                <TextView
+                    android:id="@+id/total"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF2616"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:text="RP. 0,000"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_qty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="qty"/>
         </LinearLayout>
+
     </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
-
-    <TextView
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Jumlah Pembayaran"/>
-    <EditText
-        android:id="@+id/pembayaran"
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:hint="Jumlah Uang"/>
-
-    <TextView
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Kembalian"/>
-    <TextView
-        android:id="@+id/kembalian"
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        tools:text="RP. 0,000"/>
 
     <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        app:neomorph_view_type="rectangular"
-        app:neomorph_shadow_type="outer"
-        app:neomorph_elevation="6dp"
-        app:neomorph_corner_radius="10dp"
         app:neomorph_background_color="@color/colorPrimary"
+        app:neomorph_corner_radius="10dp"
+        app:neomorph_elevation="6dp"
+        app:neomorph_highlight_color="@color/colorShadowLight"
         app:neomorph_shadow_color="@color/colorShadow"
-        app:neomorph_highlight_color="@color/colorShadowLight">
-    <Button
-        android:id="@+id/submit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Checkout"
-        android:background="@drawable/bg_button"
-        android:textColor="@color/colorShadowLight"/>
+        app:neomorph_shadow_type="outer"
+        app:neomorph_view_type="rectangular"
+        android:layout_marginTop="20dp">
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_button"
+            android:text="Checkout"
+            android:textColor="@color/colorShadowLight" />
     </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
 
 </LinearLayout>

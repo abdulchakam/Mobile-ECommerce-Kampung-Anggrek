@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PesananActivity"
+    android:background="@drawable/background"
+    android:orientation="vertical">
+    <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+    android:id="@+id/layout_detailPesanan"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    app:neomorph_view_type="rectangular"
+    app:neomorph_shadow_type="outer"
+    app:neomorph_elevation="6dp"
+    app:neomorph_corner_radius="10dp"
+    app:neomorph_background_color="@color/colorPrimary"
+    app:neomorph_shadow_color="@color/colorShadow"
+    app:neomorph_highlight_color="@color/colorShadowLight">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Pesanan Anda"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:gravity="center"/>
+</com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rc_pesanan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginHorizontal="20dp"/>
+
+</LinearLayout>

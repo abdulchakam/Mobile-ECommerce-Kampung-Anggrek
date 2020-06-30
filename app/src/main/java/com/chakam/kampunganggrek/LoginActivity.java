@@ -1,7 +1,5 @@
 package com.chakam.kampunganggrek;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -14,6 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -41,13 +41,14 @@ public class LoginActivity extends AppCompatActivity {
     private static final String TAG_SUCCESS = "success";
     private static final String TAG_MESSAGE = "message";
     public final static String TAG_EMAIL = "email";
-    public final static String TAG_KODE_KONS = "nm_kons";
+    public final static String TAG_NAMA_KONS = "nm_kons";
+    public final static String TAG_KODE_KONS = "kd_kons";
 
     String tag_json_obj = "json_obj_req";
 
     SharedPreferences sharedPreferences;
     boolean session = false;
-    String email, nm_kons;
+    String email, nm_kons, kd_kons;
 
     public static final String my_shared_preferences = "my_sahred_preferences";
     public static final String session_status = "session_status";
@@ -89,11 +90,14 @@ public class LoginActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
         session = sharedPreferences.getBoolean(session_status, false);
         email = sharedPreferences.getString(TAG_EMAIL, null);
-        nm_kons = sharedPreferences.getString(TAG_KODE_KONS, null);
+        nm_kons = sharedPreferences.getString(TAG_NAMA_KONS, null);
+        kd_kons = sharedPreferences.getString(TAG_KODE_KONS, null);
 
         if (session) {
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             intent.putExtra(TAG_EMAIL, email);
+            intent.putExtra(TAG_NAMA_KONS, nm_kons);
+            intent.putExtra(TAG_KODE_KONS, kd_kons);
             startActivity(intent);
             finish();
         }
@@ -145,6 +149,7 @@ public class LoginActivity extends AppCompatActivity {
                         //Check For Eror node in json
                         if (success == 1) {
                             String email = jsonObject.getString(TAG_EMAIL);
+                            String kd_kons = jsonObject.getString(TAG_KODE_KONS);
                             Log.e("Successfully Login!", jsonObject.toString());
                             Toast.makeText(getApplicationContext(),
                                     jsonObject.getString(TAG_MESSAGE), Toast.LENGTH_LONG).show();
@@ -153,18 +158,21 @@ public class LoginActivity extends AppCompatActivity {
                             SharedPreferences.Editor editor = sharedPreferences.edit();
                             editor.putBoolean(session_status, true);
                             editor.putString(TAG_EMAIL, email);
+                            editor.putString(TAG_KODE_KONS, kd_kons);
                             editor.commit();
 
                             //Memanggil MainActivity
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             intent.putExtra(TAG_EMAIL, email);
-                            intent.putExtra(TAG_KODE_KONS, nm_kons);
+                            intent.putExtra(TAG_NAMA_KONS, nm_kons);
+                            intent.putExtra(TAG_KODE_KONS, kd_kons);
                             startActivity(intent);
                             finish();
                         } else {
                             Toast.makeText(getApplicationContext(),
                                     jsonObject.getString(TAG_MESSAGE), Toast.LENGTH_LONG).show();
                                     hideDialog();
+                                    pDialog.cancel();
                         }
                     } catch (Exception e) {
                         e.printStackTrace();

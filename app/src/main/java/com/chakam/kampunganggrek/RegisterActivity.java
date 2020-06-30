@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
+import android.net.NetworkCapabilities;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -50,16 +51,20 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        conMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        {
-            if (conMgr.getActiveNetworkInfo() != null
-                    &&
-                    conMgr.getActiveNetworkInfo().isAvailable()
-                    &&
-                    conMgr.getActiveNetworkInfo().isConnected()) {
-            } else {
-                Toast.makeText(getApplicationContext(), "No Internet Connection", Toast.LENGTH_LONG).show();
+        ConnectivityManager manager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkCapabilities capabilities = manager.getNetworkCapabilities(manager.getActiveNetwork());
+        boolean isAvailable = false;
+
+        if (capabilities!= null) {
+            if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)) {
+                isAvailable = true;
+            } else if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)) {
+                isAvailable = true;
+            } else if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)) {
+                isAvailable = true;
             }
+        }else{
+            Toast.makeText(getApplicationContext(), "No Internet Connection", Toast.LENGTH_LONG).show();
         }
 
         sharedpreferences = getSharedPreferences(my_shared_preferences,Context.MODE_PRIVATE);
@@ -103,13 +108,13 @@ public class RegisterActivity extends AppCompatActivity {
                         TextView regis_email = (TextView) findViewById(R.id.edt_email);
                         TextView password = (TextView) findViewById(R.id.edt_pass);
 
-                        nama.setText(null);
-                        alamat.setText(null);
-                        kota.setText(null);
-                        kodepos.setText(null);
-                        phone.setText(null);
-                        regis_email.setText(null);
-                        password.setText(null);
+//                        nama.setText(null);
+//                        alamat.setText(null);
+//                        kota.setText(null);
+//                        kodepos.setText(null);
+//                        phone.setText(null);
+//                        regis_email.setText(null);
+//                        password.setText(null);
                         try {
                             JSONObject jObj = new JSONObject(response);
                             success = jObj.getInt(TAG_SUCCESS);

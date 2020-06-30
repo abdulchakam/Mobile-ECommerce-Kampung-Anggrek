@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:neomorph_view_type="rectangular"
+    app:neomorph_shadow_type="outer"
+    app:neomorph_elevation="6dp"
+    app:neomorph_corner_radius="10dp"
+    app:neomorph_background_color="@color/colorPrimary"
+    app:neomorph_shadow_color="@color/colorShadow"
+    app:neomorph_highlight_color="@color/colorShadowLight"
+    android:layout_centerInParent="true">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/due_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="due date : "
+            android:textSize="12dp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="10dp"/>
+        <TextView
+            android:id="@+id/tv_due_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20-06-2020 10:00:00"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:layout_marginBottom="5dp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_below="@id/due_date"/>
+
+        <TextView
+            android:id="@+id/tv_total_tagihan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rp.1.000.000-;"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:layout_marginHorizontal="15dp"
+            android:textColor="@color/colorAccent"
+            android:layout_below="@id/tv_due_date"
+            android:layout_marginTop="10dp"/>
+
+        <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+            android:id="@+id/btn_bayar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:neomorph_view_type="rectangular"
+            app:neomorph_shadow_type="outer"
+            app:neomorph_elevation="6dp"
+            app:neomorph_corner_radius="10dp"
+            app:neomorph_background_color="@color/colorPrimary"
+            app:neomorph_shadow_color="@color/colorShadow"
+            app:neomorph_highlight_color="@color/colorShadowLight"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="15dp">
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="     "
+                android:textStyle="bold"
+                android:layout_centerVertical="true"
+                android:textSize="18dp"
+                android:textColor="#FF2616"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginVertical="8dp"/>
+        </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
+
+    </RelativeLayout>
+</com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>

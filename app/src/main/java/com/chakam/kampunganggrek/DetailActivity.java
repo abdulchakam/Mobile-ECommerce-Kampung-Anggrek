@@ -1,13 +1,13 @@
 package com.chakam.kampunganggrek;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 
@@ -15,7 +15,9 @@ import java.text.NumberFormat;
 
 public class DetailActivity extends AppCompatActivity {
 
-    String gambar, harga;
+    String gambar;
+    int harga;
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +29,7 @@ public class DetailActivity extends AppCompatActivity {
         nf.setMaximumFractionDigits(0);
 
         Intent intent = getIntent();
-        this.harga = intent.getStringExtra("harga");
+        this.harga = intent.getIntExtra("harga",0);
         this.gambar = intent.getStringExtra("gambar");
 
         TextView nama_detail = (TextView) findViewById(R.id.tv_nama_detail);
@@ -37,7 +39,7 @@ public class DetailActivity extends AppCompatActivity {
 
         nama_detail.setText(getIntent().getStringExtra("nama"));
         deskripsi_detail.setText(getIntent().getStringExtra("deskripsi"));
-        harga_detail.setText("Rp. "+nf.format(Double.parseDouble(harga)));
+        harga_detail.setText("Rp. "+nf.format(harga));
 
         Glide.with(DetailActivity.this)
                 .load(gambar)

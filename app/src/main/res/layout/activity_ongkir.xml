@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingHorizontal="10dp"
+    android:background="@drawable/background"
+    tools:context=".OngkirActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="From"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Province : "
+                android:textSize="12sp" />
+
+            <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+                android:id="@+id/layout_FromProvince"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:neomorph_view_type="rectangular"
+                app:neomorph_shadow_type="outer"
+                app:neomorph_elevation="6dp"
+                app:neomorph_corner_radius="10dp"
+                app:neomorph_background_color="@color/colorPrimary"
+                app:neomorph_shadow_color="@color/colorShadow"
+                app:neomorph_highlight_color="@color/colorShadowLight">
+                <EditText
+                    android:id="@+id/etFromProvince"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_reactangle"
+                    android:focusable="false"
+                    android:padding="12dp" />
+            </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="City :"
+                android:textSize="12sp" />
+
+            <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+                android:id="@+id/layout_FromCity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:neomorph_view_type="rectangular"
+                app:neomorph_shadow_type="outer"
+                app:neomorph_elevation="6dp"
+                app:neomorph_corner_radius="10dp"
+                app:neomorph_background_color="@color/colorPrimary"
+                app:neomorph_shadow_color="@color/colorShadow"
+                app:neomorph_highlight_color="@color/colorShadowLight">
+                <EditText
+                    android:id="@+id/etFromCity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_rectangle_line_primary"
+                    android:focusable="false"
+                    android:padding="12dp" />
+            </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="To"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Province : "
+                android:textSize="12sp" />
+
+            <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+                android:id="@+id/layout_ToProvince"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:neomorph_view_type="rectangular"
+                app:neomorph_shadow_type="outer"
+                app:neomorph_elevation="6dp"
+                app:neomorph_corner_radius="10dp"
+                app:neomorph_background_color="@color/colorPrimary"
+                app:neomorph_shadow_color="@color/colorShadow"
+                app:neomorph_highlight_color="@color/colorShadowLight">
+                <EditText
+                    android:id="@+id/etToProvince"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_rectangle_line_primary"
+                    android:focusable="false"
+                    android:padding="12dp" />
+            </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="City :"
+                android:textSize="12sp" />
+
+            <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+                android:id="@+id/layout_ToCity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:neomorph_view_type="rectangular"
+                app:neomorph_shadow_type="outer"
+                app:neomorph_elevation="6dp"
+                app:neomorph_corner_radius="10dp"
+                app:neomorph_background_color="@color/colorPrimary"
+                app:neomorph_shadow_color="@color/colorShadow"
+                app:neomorph_highlight_color="@color/colorShadowLight">
+                <EditText
+                    android:id="@+id/etToCity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_rectangle_line_primary"
+                    android:focusable="false"
+                    android:padding="12dp" />
+            </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Weight (gram)"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+
+        <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+            android:id="@+id/layout_Weight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:neomorph_view_type="rectangular"
+            app:neomorph_shadow_type="outer"
+            app:neomorph_elevation="6dp"
+            app:neomorph_corner_radius="10dp"
+            app:neomorph_background_color="@color/colorPrimary"
+            app:neomorph_shadow_color="@color/colorShadow"
+            app:neomorph_highlight_color="@color/colorShadowLight">
+            <EditText
+                android:id="@+id/etWeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_rectangle_line_primary"
+                android:inputType="number"
+                android:padding="12dp" />
+        </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Courier"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+            android:id="@+id/layout_Courier"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:neomorph_view_type="rectangular"
+            app:neomorph_shadow_type="outer"
+            app:neomorph_elevation="6dp"
+            app:neomorph_corner_radius="10dp"
+            app:neomorph_background_color="@color/colorPrimary"
+            app:neomorph_shadow_color="@color/colorShadow"
+            app:neomorph_highlight_color="@color/colorShadowLight">
+            <EditText
+                android:id="@+id/etCourier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_rectangle_line_primary"
+                android:focusable="false"
+                android:padding="12dp" />
+        </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
+
+        <Button
+            android:id="@+id/btnProcess"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Process"
+            android:textSize="16sp"
+            android:background="@drawable/bg_button"
+            android:textColor="@color/colorShadowLight"/>
+
+    </LinearLayout>
+
+</LinearLayout>
